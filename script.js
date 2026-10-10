@@ -129,3 +129,50 @@ function animarFundo() {
 }
 
 animarFundo();
+
+const sidebar = document.getElementById('sidebar');
+const menuToggle = document.querySelector('.menu-toggle');
+
+menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('menu-aberto');
+});
+
+const themeToggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+
+// Aplica o tema escolhido
+function aplicarTema(tema) {
+    const temaEscuro = tema === "dark";
+
+    root.setAttribute("data-theme", tema);
+
+    if (themeToggle) {
+        themeToggle.setAttribute(
+            "aria-pressed",
+            String(temaEscuro)
+        );
+
+        themeToggle.setAttribute(
+            "aria-label",
+            temaEscuro
+                ? "Ativar tema claro"
+                : "Ativar tema escuro"
+        );
+    }
+}
+
+// Recupera o tema salvo no navegador
+const temaSalvo = localStorage.getItem("tema");
+
+aplicarTema(temaSalvo === "dark" ? "dark" : "light");
+
+// Alterna o tema ao clicar no knob
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const temaAtual = root.getAttribute("data-theme");
+        const novoTema = temaAtual === "dark" ? "light" : "dark";
+
+        aplicarTema(novoTema);
+        localStorage.setItem("tema", novoTema);
+    });
+}
