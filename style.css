@@ -770,7 +770,7 @@ h2 {
             ),
             url('img/bg.png');
 
-        background-size: cover;
+        background-size: 190em;
         background-repeat: no-repeat;
         background-position: center top;
         background-attachment: scroll;
