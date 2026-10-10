@@ -760,3 +760,19 @@ h2 {
         display: none;
     }
 }
+
+@media (max-width: 700px) {
+    body {
+        background-image:
+            linear-gradient(
+                var(--cor-fundo-inicio),
+                var(--cor-fundo-fim)
+            ),
+            url('img/bg.png');
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
