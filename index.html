@@ -17,7 +17,27 @@
 <body>
     <header>
 
-    <div class="sidebar">
+    <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Ativar tema escuro"
+        aria-pressed="false"
+>
+        <span class="theme-toggle-icon" aria-hidden="true">☀</span>
+
+        <span class="theme-toggle-track">
+            <span class="theme-toggle-knob"></span>
+        </span>
+
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+    </button>
+
+    <div class="sidebar" id="sidebar">
+        
+        <div class="menu-toggle">
+        <span>☰</span>
+        </div>
 
         <a href="#inicio" class="menu-item">
          <img src="img/home.png" alt="">
